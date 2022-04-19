@@ -2,7 +2,7 @@
  * @author [Petr Oblouk]
  * @github [https://github.com/peoblouk]
  * @create date 15-04-2022 - 16:46:28
- * @modify date 15-04-2022 - 23:23:31
+ * @modify date 19-04-2022 - 19:24:41
  * @desc [description]
  */
 #include "stm8s.h"

@@ -35,13 +35,16 @@ C_SOURCES = $(wildcard app/src/*.c)
 # C_SOURCES += drivers/src/stm8s_can.c
 C_SOURCES += drivers/src/stm8s_conf.c
 C_SOURCES += drivers/src/stm8s_clk.c
+C_SOURCES += drivers/src/stm8s_delay.c
 # C_SOURCES += drivers/src/stm8s_exti.c
 # C_SOURCES += drivers/src/stm8s_flash.c
 C_SOURCES += drivers/src/stm8s_gpio.c
 # C_SOURCES += drivers/src/stm8s_i2c.c
 # C_SOURCES += drivers/src/stm8s_itc.c
 # C_SOURCES += drivers/src/stm8s_iwdg.c
+# C_SOURCES += drivers/src/stm8s_milis.c
 # C_SOURCES += drivers/src/stm8s_rst.c
+C_SOURCES += drivers/src/stm8s_setup.c
 # C_SOURCES += drivers/src/stm8s_spi.c
 # C_SOURCES += drivers/src/stm8s_tim1.c
 # C_SOURCES += drivers/src/stm8s_tim2.c
@@ -50,9 +53,7 @@ C_SOURCES += drivers/src/stm8s_tim4.c
 # C_SOURCES += drivers/src/stm8s_uart1.c
 # C_SOURCES += drivers/src/stm8s_uart3.c
 # C_SOURCES += drivers/src/stm8s_wwdg.c
-C_SOURCES += drivers/src/stm8s_delay.c
-C_SOURCES += drivers/src/stm8s_setup.c
-# C_SOURCES += drivers/src/stm8s_milis.c
+
 ########################################
 # Tools
 ########################################

@@ -7,15 +7,15 @@
  */
 #include "stm8s.h"
 
-void setup(void)
+void main(void)
 {
     GPIO_DeInit;
     CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);      // FREQ MCU 16MHz
     GPIO_Init(GPIOC, PIN_5, GPIO_MODE_OUT_PP_LOW_SLOW); // PC5
-}
 
-void loop(void)
-{
-    GPIO_WriteReverse(GPIOC, PIN_5);
-    delay.ms(100);
+    while (1)
+    {
+        GPIO_WriteReverse(GPIOC, PIN_5);
+        delay.ms(100);
+    }
 }

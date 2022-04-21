@@ -88,7 +88,7 @@
 
 // This was costumized !!
 #include "stm8s_delay.h"
-#include "stm8s_setup.h"
+// #include "stm8s_setup.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

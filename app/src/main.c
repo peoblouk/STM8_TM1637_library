@@ -6,16 +6,19 @@
  * @desc [description]
  */
 #include "stm8s.h"
+#include <stdio.h>
 
 void main(void)
 {
     GPIO_DeInit;
     CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);      // FREQ MCU 16MHz
     GPIO_Init(GPIOC, PIN_5, GPIO_MODE_OUT_PP_LOW_SLOW); // PC5
+    Serial.begin(9600);
 
     while (1)
     {
         GPIO_WriteReverse(GPIOC, PIN_5);
-        delay.ms(100);
+        printf("test\n");
+        delay.ms(1000);
     }
 }

@@ -44,13 +44,14 @@ C_SOURCES += drivers/src/stm8s_gpio.c
 # C_SOURCES += drivers/src/stm8s_iwdg.c
 # C_SOURCES += drivers/src/stm8s_milis.c
 # C_SOURCES += drivers/src/stm8s_rst.c
+C_SOURCES += drivers/src/stm8s_serialmonitor.c 
 # C_SOURCES += drivers/src/stm8s_setup.c
-# C_SOURCES += drivers/src/stm8s_spi.c
+C_SOURCES += drivers/src/stm8s_spi.c
 # C_SOURCES += drivers/src/stm8s_tim1.c
 # C_SOURCES += drivers/src/stm8s_tim2.c
 # C_SOURCES += drivers/src/stm8s_tim3.c
-C_SOURCES += drivers/src/stm8s_tim4.c
-# C_SOURCES += drivers/src/stm8s_uart1.c
+# C_SOURCES += drivers/src/stm8s_tim4.c
+C_SOURCES += drivers/src/stm8s_uart1.c # need to be enabled, if you want to use Serial Monitor
 # C_SOURCES += drivers/src/stm8s_uart3.c
 # C_SOURCES += drivers/src/stm8s_wwdg.c
 

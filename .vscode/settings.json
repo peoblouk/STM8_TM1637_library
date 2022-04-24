@@ -2,5 +2,10 @@
     "cSpell.enabled": false,
     "files.exclude": {
         "build/": true
-    }
+    },
+    "files.associations": {
+        "stm8s_serialmonitor.h": "c",
+        "serial.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

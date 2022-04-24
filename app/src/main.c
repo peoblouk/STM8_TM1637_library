@@ -19,6 +19,6 @@ void main(void)
     {
         GPIO_WriteReverse(GPIOC, PIN_5);
         printf("test\n");
-        delay.ms(1000);
+        delay.ms(100);
     }
 }

@@ -89,6 +89,8 @@
 // This was costumized !!
 #include "stm8s_delay.h"
 #include "stm8s_serialmonitor.h"
+#include <stdio.h>
+#include "stm8s_tm1637.h"
 // #include "stm8s_setup.h"
 
 /* Exported types ------------------------------------------------------------*/

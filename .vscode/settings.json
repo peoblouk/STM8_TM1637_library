@@ -5,7 +5,9 @@
     },
     "files.associations": {
         "stm8s_serialmonitor.h": "c",
-        "serial.h": "c"
+        "serial.h": "c",
+        "stm8s_clk.h": "c",
+        "stm8s.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

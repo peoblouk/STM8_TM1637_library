@@ -54,6 +54,7 @@ C_SOURCES += drivers/src/stm8s_spi.c
 C_SOURCES += drivers/src/stm8s_uart1.c # need to be enabled, if you want to use Serial Monitor
 # C_SOURCES += drivers/src/stm8s_uart3.c
 # C_SOURCES += drivers/src/stm8s_wwdg.c
+C_SOURCES += drivers/src/stm8s_tm1637.c # tm1637 (display)
 
 ########################################
 # Tools

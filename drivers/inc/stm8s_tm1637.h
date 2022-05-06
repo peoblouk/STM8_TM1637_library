@@ -16,13 +16,11 @@
 /** @addtogroup HELPERS_Exported_Types
  * @{
  */
-
 typedef struct
 {
     // Initialize tm1637 with the clock and data pins
-    // void (*init)(GPIO_TypeDef *, GPIO_Pin_TypeDef, GPIO_TypeDef *, GPIO_Pin_TypeDef);
+    void (*init_)(GPIO_TypeDef *, GPIO_Pin_TypeDef, GPIO_TypeDef *, GPIO_Pin_TypeDef);
 
-    void (*init)(void);
     // Start wire transaction
     void (*start)(void);
 

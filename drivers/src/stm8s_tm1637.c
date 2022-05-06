@@ -35,12 +35,12 @@
  */
 
 /* -------------------------------------------------------------------------------------------*/
-
 #define CLOCK_DELAY 0
 
 #define LOW 0
 #define HIGH 1
 /*--------------------------------------------------------------------------------------------*/
+
 // Table which translates a digit into the segments
 const unsigned char cDigit2Seg[] = {0x3f, 0x6, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f};
 
@@ -64,14 +64,15 @@ GPIO_TypeDef *bClockPort = GPIOB;
 GPIO_Pin_TypeDef bDataPort = GPIOB;
 GPIO_TypeDef *bClockPin = PIN_0;
 GPIO_Pin_TypeDef bDataPin = PIN_1;
-
+/*--------------------------------------------------------------------------------------------*/
+/*
 void tm1637_init()
 {
 	GPIO_Init(bClockPort, bClockPin, GPIO_MODE_OUT_PP_LOW_FAST);
 	GPIO_Init(bDataPort, bDataPin, GPIO_MODE_OUT_PP_LOW_FAST);
 	GPIO_WriteLow(bClockPort, bClockPin);
 	GPIO_WriteLow(bDataPort, bDataPin);
-}
+} */
 /*--------------------------------------------------------------------------------------------*/
 // Start wire transaction
 void tm1637_Start(void)

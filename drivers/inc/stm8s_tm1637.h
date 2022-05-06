@@ -110,8 +110,7 @@ void tm1637ShowDigits(char *pString);
 /** @addtogroup HELPERS_Exported_Functions
  * @{
  */
-// void tm1637_init(GPIO_TypeDef *bClock, GPIO_Pin_TypeDef bClockP, GPIO_TypeDef *bData, GPIO_Pin_TypeDef bDataP);
-void tm1637_init(void);
+void tm1637_init(GPIO_TypeDef *bClock, GPIO_Pin_TypeDef bClockP, GPIO_TypeDef *bData, GPIO_Pin_TypeDef bDataP);
 void tm1637_start(void);
 void tm1637_stop(void);
 uint8_t tm1637_get_ack(void);

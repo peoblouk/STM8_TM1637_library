@@ -37,7 +37,7 @@ typedef struct
     void (*write)(uint8_t *, uint8_t);
 
     // Set brightness (0-8)
-    void (*setbrightness)(uint8_t);
+    void (*brightness)(uint8_t);
 
     // Display a string of 4 digits and optional colon
     // by passing a string such as "12:34" or "45 67"

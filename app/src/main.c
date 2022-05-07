@@ -18,30 +18,31 @@ void main(void)
     GPIO_Init(GPIOC, PIN_5, GPIO_MODE_OUT_PP_LOW_SLOW); // PC5
     Serial.begin(9600);                                 // Serial monitor Baudrate = 9600
     // tm1637.init(GPIOB, PIN_0, GPIOB, PIN_1);            // inicialization of TM1637
-    // tm1637.setbrightness(7);
+    tm1637.brightness(7);
     //
     while (1)
     {
-        if (secs == 60)
-        {
-            secs = 0;
-            min++;
-        }
-        if (min == 60)
-        {
-            min = 0;
-            hours++;
-        }
-        if (hours == 24)
-        {
-            hours = 0;
-        }
-        if (secs & 1)
-            sprintf(szTemp, "%02d:%02d", hours, min);
-        else
-            sprintf(szTemp, "%02d %02d", hours, min);
-        tm1637.dgt(szTemp);
-        secs++;
+        tm1637.dgt(1234);
+        /*         if (secs == 60)
+                {
+                    secs = 0;
+                    min++;
+                }
+                if (min == 60)
+                {
+                    min = 0;
+                    hours++;
+                }
+                if (hours == 24)
+                {
+                    hours = 0;
+                }
+                if (secs & 1)
+                    sprintf(szTemp, "%02d:%02d", hours, min);
+                else
+                    sprintf(szTemp, "%02d %02d", hours, min);
+                tm1637.dgt(szTemp);
+                secs++; */
         delay.ms(1000);
     }
     // printf("%s \n", szTemp);

@@ -206,7 +206,7 @@ void tm1637_write(uint8_t *pData, uint8_t bLen)
 
 /*--------------------------------------------------------------------------------------------*/
 // Set brightness (0-8)
-void tm1637_set_brightness(uint8_t b)
+void tm1637_brightness(uint8_t b)
 {
 	uint8_t bControl;
 	if (b == 0)
@@ -272,8 +272,8 @@ const TM1637_Module tm1637 = {
 	.getack = tm1637_get_ack,
 	.writebyte = tm1637_write_byte,
 	.write = tm1637_write,
-	.brightness = tm1637_set_brightness,
-	.showdgt = tm1637_show_digits,
+	.brightness = tm1637_brightness,
+	.dgt = tm1637_show_digits,
 };
 /* -------------------------------------------------------------------------------------------*/
 

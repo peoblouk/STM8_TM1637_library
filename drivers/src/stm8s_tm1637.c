@@ -46,7 +46,7 @@ const unsigned char cDigit2Seg[] = {0x3f, 0x6, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x0
 
 /*--------------------------------------------------------------------------------------------*/
 // Initialize tm1637 with the clock and data pins
-void tm1637_init(GPIO_TypeDef *bClock, GPIO_Pin_TypeDef bClockP, GPIO_TypeDef *bData, GPIO_Pin_TypeDef bDataP)
+/* void tm1637_init(GPIO_TypeDef *bClock, GPIO_Pin_TypeDef bClockP, GPIO_TypeDef *bData, GPIO_Pin_TypeDef bDataP)
 {
 	GPIO_TypeDef *bClockPort = bClock;
 	GPIO_Pin_TypeDef bDataPort = bData;
@@ -58,12 +58,19 @@ void tm1637_init(GPIO_TypeDef *bClock, GPIO_Pin_TypeDef bClockP, GPIO_TypeDef *b
 	GPIO_Init(bDataPort, bDataPin, GPIO_MODE_OUT_PP_LOW_FAST);
 	GPIO_WriteLow(bClockPort, bClockPin);
 	GPIO_WriteLow(bDataPort, bDataPin);
-}
+} */
 //
-GPIO_TypeDef *bClockPort = GPIOB;
-GPIO_Pin_TypeDef bDataPort = GPIOB;
-GPIO_TypeDef *bClockPin = PIN_0;
-GPIO_Pin_TypeDef bDataPin = PIN_1;
+
+// char bClockPort[] = {GPIOB};
+// char bDataPort[] = {GPIOB};
+// char bClockPin[] = {PIN_0};
+// char bDataPin[] = {PIN_1};
+
+#define bClockPort GPIOB
+#define bDataPort GPIOB
+#define bClockPin PIN_0
+#define bDataPin PIN_1
+
 /*--------------------------------------------------------------------------------------------*/
 /*
 void tm1637_init()
@@ -75,7 +82,7 @@ void tm1637_init()
 } */
 /*--------------------------------------------------------------------------------------------*/
 // Start wire transaction
-void tm1637_Start(void)
+void tm1637_start(void)
 {
 	/*
 	GPIO_Set_Pin_High(bDataPort, bDataPin);
@@ -93,7 +100,7 @@ void tm1637_Start(void)
 
 /*--------------------------------------------------------------------------------------------*/
 // Stop wire transaction
-void tm1637Stop(void)
+void tm1637_stop(void)
 {
 	/* // clock low
 	GPIO_Set_Pin_Low(bClockPort, bClockPin);
@@ -184,17 +191,17 @@ void tm1637_write_byte(uint8_t b)
 
 /*--------------------------------------------------------------------------------------------*/
 // Write a sequence of unsigned chars to the controller
-void tm1637_write(uint8_t pData, uint8_t bLen)
+void tm1637_write(uint8_t *Data, uint8_t bLen)
 {
 	uint8_t b, bAck;
 	bAck = 1;
-	tm1637Start();
+	tm1637_start();
 	for (b = 0; b < bLen; b++)
 	{
-		tm1637WriteByte(pData[b]);
-		bAck &= tm1637GetAck();
+		tm1637_write_byte(pData[b]);
+		bAck &= tm1637_get_ack();
 	}
-	tm1637Stop();
+	tm1637_stop();
 }
 
 /*--------------------------------------------------------------------------------------------*/
@@ -211,13 +218,13 @@ void tm1637_set_brightness(uint8_t b)
 			b = 8;
 		bControl = 0x88 | (b - 1);
 	}
-	tm1637Write(&bControl, 1);
+	tm1637_write(&bControl, 1);
 }
 
 /*--------------------------------------------------------------------------------------------*/
 // Display a string of 4 digits and optional colon
 // by passing a string such as "12:34" or "45 67"
-void tm1637_show_digits(char pString)
+void tm1637_show_digits(char *pString)
 {
 	// commands and data to transmit
 	uint8_t b, bTemp[16];
@@ -226,7 +233,7 @@ void tm1637_show_digits(char pString)
 
 	// memory write command (auto increment mode)
 	bTemp[0] = 0x40;
-	tm1637Write(bTemp, 1);
+	tm1637_write(bTemp, 1);
 
 	// set display address to first digit command
 	bTemp[j++] = 0xc0;
@@ -254,12 +261,12 @@ void tm1637_show_digits(char pString)
 		}
 	}
 	// send to the display
-	tm1637Write(bTemp, j);
+	tm1637_write(bTemp, j);
 }
 
 /*--------------------------------------------------------------------------------------------*/
 const TM1637_Module tm1637 = {
-	.init = tm1637_init,
+	//.init = tm1637_init,
 	.start = tm1637_start,
 	.stop = tm1637_stop,
 	.getack = tm1637_get_ack,

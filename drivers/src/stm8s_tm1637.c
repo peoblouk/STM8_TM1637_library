@@ -191,7 +191,7 @@ void tm1637_write_byte(uint8_t b)
 
 /*--------------------------------------------------------------------------------------------*/
 // Write a sequence of unsigned chars to the controller
-void tm1637_write(uint8_t *Data, uint8_t bLen)
+void tm1637_write(uint8_t *pData, uint8_t bLen)
 {
 	uint8_t b, bAck;
 	bAck = 1;
